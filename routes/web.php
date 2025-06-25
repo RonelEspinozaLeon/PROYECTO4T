@@ -23,14 +23,16 @@ Route::get('/cita/formulario',[CitaController::class, 'formulario'])->middleware
 Route::get('/doctor/mostrar',[DoctorController::class, 'mostrar'])->middleware("auth");
 
 Route::get('/doctor/formulario',function () {
-    return view('doctor.formularioc');
+    return view('doctor.formulariod');
 });
-
+Route::get('/doctor/home',function () {
+    return view('doctor.homeDoctor');
+});
 /* especialidad */
 
 Route::get('/especialidad/mostrar',[EspecialidadController::class, 'mostrar'])->middleware("auth");
 Route::get('/especialidad/formulario',function () {
-    return view('especialidad.formularioc');
+    return view('especialidad.formularioe');
 });
 
 /* horario */
@@ -38,15 +40,21 @@ Route::get('/especialidad/formulario',function () {
 
 Route::get('/horario/mostrar',[HorarioController::class, 'mostrar'])->middleware("auth");
 Route::get('/horario/formulario',function () {
-    return view('horario.formularioc');
+    return view('horario.formularioh');
 });
 
 
 /* paciente */
 Route::get('/paciente/mostrar',[PacienteController::class, 'mostrar'])->middleware("auth");
 Route::get('/paciente/formulario',function () {
-    return view('paciente.formularioc');
+    return view('paciente.formulariop');
 });
+Route::get('/paciente/home',function () {
+    return view('paciente.homePaciente');
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
