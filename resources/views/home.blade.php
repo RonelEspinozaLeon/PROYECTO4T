@@ -24,14 +24,17 @@
  -->
 
 <h1>ELIGE EL TIPO DE USUARIO</h1>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <a class="nav-link" href="paciente/formulario/">Paciente</a>
-                <a class="nav-link" href="doctor/formulario/">Doctor</a>
-              
+<table border="red" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <a class="nav-link" href="paciente/formulario/">Paciente</a>
+                    <a class="nav-link" href="doctor/formulario/">Doctor</a>
+                
+                </div>
             </div>
         </div>
     </div>
-</div>
+</table>
+ 
