@@ -12,12 +12,14 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
+                            <label for="tipo" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de usuario') }}</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
+                                <select id="tipo" class="form-control @error('tipo') is-invalid @enderror" name="tipo" required>
+                                    <option value="">-- Selecciona un tipo --</option>
+                                    <option value="paciente" {{ old('tipo') == 'paciente' ? 'selected' : '' }}>Paciente</option>
+                                    <option value="doctor" {{ old('tipo') == 'doctor' ? 'selected' : '' }}>Doctor</option>
+                                </select>
+                                @error('tipo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -37,6 +37,21 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="cita/formulario/">FORMULARIO</a>
                             </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="doctor/home/">AGREGAR DATOS</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="horario/formulario/">HORARIO</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="especialidad/formulario/">ESPECIALIDAD</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="especialidad/mostrar/">ESPECIALIDAD MOSTRAR</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="horario/mostrar/">HORARIO MOSTRAR </a>
+                            </li>
 
                         </ul>
                     @endauth

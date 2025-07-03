@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('horarios', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('doctor_id')->constrained('doctores')->onDelete('cascade');
-            $table->unsignedTinyInteger('dia_semana'); // 0: lunes, 6: domingo
-            $table->time('hora_inicio');
-            $table->time('hora_fin');
-            $table->timestamps();
+        
+        Schema::create('pacientes', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+                $table->string('nombre');
+                $table->string('apellido');
+                $table->date('fecha_nacimiento');
+                $table->timestamps();
         });
 
 

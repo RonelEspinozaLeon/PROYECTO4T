@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('horarios', function (Blueprint $table) {
+        Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('paciente_id')->constrained('pacientes')->onDelete('cascade');
             $table->foreignId('doctor_id')->constrained('doctores')->onDelete('cascade');
-            $table->unsignedTinyInteger('dia_semana'); // 0: lunes, 6: domingo
-            $table->time('hora_inicio');
-            $table->time('hora_fin');
+            $table->dateTime('fecha_hora');
+            $table->enum('tipo_consulta', ['presencial', 'remota']);
+            $table->enum('estado', ['pendiente', 'confirmada', 'cancelada', 'realizada'])->default('pendiente');
             $table->timestamps();
         });
-
 
     }
 

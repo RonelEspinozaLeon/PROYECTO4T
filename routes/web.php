@@ -22,26 +22,22 @@ Route::get('/cita/formulario',[CitaController::class, 'formulario'])->middleware
 
 Route::get('/doctor/mostrar',[DoctorController::class, 'mostrar'])->middleware("auth");
 
-Route::get('/doctor/formulario',function () {
-    return view('doctor.formulariod');
-});
-Route::get('/doctor/home',function () {
+Route::post('/doctor/guardar', [DoctorController::class, 'guardar'])->name('doctor.guardar');
+Route::get('/doctor/home', function () {
     return view('doctor.homeDoctor');
 });
-/* especialidad */
 
-Route::get('/especialidad/mostrar',[EspecialidadController::class, 'mostrar'])->middleware("auth");
-Route::get('/especialidad/formulario',function () {
-    return view('especialidad.formularioe');
-});
+
+
+/* especialidad */
+Route::get('/especialidad/mostrar', [EspecialidadController::class, 'mostrar'])->middleware("auth");
+Route::get('/especialidad/formulario', [EspecialidadController::class, 'especialidad'])->middleware("auth");
+Route::post('/especialidad/guardar', [EspecialidadController::class, 'guardar'])->name('especialidad.guardar')->middleware("auth");
 
 /* horario */
-
-
-Route::get('/horario/mostrar',[HorarioController::class, 'mostrar'])->middleware("auth");
-Route::get('/horario/formulario',function () {
-    return view('horario.formularioh');
-});
+Route::get('/horario/mostrar', [HorarioController::class, 'mostrar'])->middleware("auth");
+Route::get('/horario/formulario', [HorarioController::class, 'horario'])->middleware("auth");
+Route::post('/horario/guardar', [HorarioController::class, 'guardar'])->name('horario.guardar')->middleware("auth");
 
 
 /* paciente */
